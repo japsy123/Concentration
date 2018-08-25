@@ -62,7 +62,6 @@ function shuffle(array) {
  var listOpenCards=[];
 
 function init(){
-    shuffleTheDeck();
     var deck = document.querySelector('.deck');
     deck.addEventListener('click', event => {
         const cardClicked = event.target;
@@ -103,6 +102,9 @@ function startTheClock(){
 function stopClock(){
 
     clearInterval(clockId);
+    isClockOff = true;
+    time = 0;
+    showTime();
 }
 function showTime(){
     const clock = document.querySelector('.clock');
@@ -221,10 +223,36 @@ function toggleModal(){
     getModal.classList.toggle('hide');
     dataForModal();
 }
-toggleModal();
-function resetGame(){
+
+function resetStats(){
+    moves = 0;
+    document.querySelector('.moves').innerHTML = moves;
+    starRating = 3;
+    const listOfStars = Array.from(document.querySelectorAll('.stars li'));
+
+    for(star of listOfStars){
+        star.firstElementChild.classList.remove('fa-star-o');
+
+        star.firstElementChild.classList.add('fa-star');
+
+    }
+   
+    
     
 }
+function resetGame(){
+    document.querySelector('.modal').classList.add('hide');
+    stopClock();
+    resetStats();
+    shuffleTheDeck();
+
+}
 document.querySelector('.close').addEventListener('click',toggleModal);
-document.querySelector('.replay').addEventListener('click',resetGame)
+document.querySelector('.replay').addEventListener('click',resetGame);
+document.querySelector('.restart').addEventListener('click',resetGame);
+
+
+
+// Beginning function calls
 init();
+shuffleTheDeck();
