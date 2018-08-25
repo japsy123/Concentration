@@ -8,6 +8,7 @@ const deck = document.querySelector('.deck');
 let isClockOff = true;
 let time= 23;
 let clockId;
+let starRating= 3;
 
 /*
  * Display the cards on the page
@@ -155,6 +156,7 @@ function changeStars(){
         if( !listOfStars[i].firstElementChild.classList.contains('fa-star-o')){
             listOfStars[i].firstElementChild.classList.remove('fa-star');
             listOfStars[i].firstElementChild.classList.add('fa-star-o');
+            starRating--;
             break;
 
         }
@@ -212,7 +214,7 @@ function dataForModal(){
     const modalStars = document.querySelector('.player_stars');
     modalTime.innerHTML = `Time: ${time}`;
     modalMoves.innerHTML = `Moves: ${moves}`;
-    modalStars.innerHTML = `Stars: 1`;
+    modalStars.innerHTML = `Stars: ${starRating}`;
 }
 function toggleModal(){
     const getModal = document.querySelector('.modal');
