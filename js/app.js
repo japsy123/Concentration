@@ -1,12 +1,12 @@
 /*
  * Create a list that holds all of your cards
  */
-let moves = 45;
+let moves = 0;
 let score = 0;
 const deckOfCards = Array.from(document.querySelectorAll('.card'));
 const deck = document.querySelector('.deck');
 let isClockOff = true;
-let time= 23;
+let time= 0;
 let clockId;
 let starRating= 3;
 
@@ -222,4 +222,6 @@ function toggleModal(){
     dataForModal();
 }
 toggleModal();
+
+document.querySelector('.close').addEventListener('click',toggleModal);
 init();
