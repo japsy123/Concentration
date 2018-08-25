@@ -9,7 +9,6 @@ let isClockOff = true;
 let time= 0;
 let clockId;
 let starRating= 3;
-
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -134,6 +133,12 @@ function lockCards(fCard,sCard){
     sCard.classList.toggle('match');
     console.log("match")
     listOpenCards = [];
+    score ++;
+    if(score === 1){
+        stopClock();
+        toggleModal();
+
+    }
 
 }
 
@@ -187,8 +192,7 @@ function checkScore(){
     var secondCard = listOpenCards[1];
 
     if(firstCard.firstElementChild.className === secondCard.firstElementChild.className){
-        lockCards(firstCard,secondCard);
-        score++;
+        lockCards(firstCard,secondCard);        
     }
 
     else {
@@ -226,6 +230,7 @@ function toggleModal(){
 
 function resetStats(){
     moves = 0;
+    score=0;
     document.querySelector('.moves').innerHTML = moves;
     starRating = 3;
     const listOfStars = Array.from(document.querySelectorAll('.stars li'));
@@ -236,9 +241,7 @@ function resetStats(){
         star.firstElementChild.classList.add('fa-star');
 
     }
-   
-    
-    
+      
 }
 function resetGame(){
     document.querySelector('.modal').classList.add('hide');
@@ -247,6 +250,8 @@ function resetGame(){
     shuffleTheDeck();
 
 }
+
+
 document.querySelector('.close').addEventListener('click',toggleModal);
 document.querySelector('.replay').addEventListener('click',resetGame);
 document.querySelector('.restart').addEventListener('click',resetGame);
