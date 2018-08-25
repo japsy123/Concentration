@@ -1,12 +1,12 @@
 /*
  * Create a list that holds all of your cards
  */
-let moves = 0;
+let moves = 45;
 let score = 0;
 const deckOfCards = Array.from(document.querySelectorAll('.card'));
 const deck = document.querySelector('.deck');
 let isClockOff = true;
-let time= 0;
+let time= 23;
 let clockId;
 
 /*
@@ -96,10 +96,7 @@ function startTheClock(){
     },1000)
 }
 
-function toggleModal(){
-    const getModal = document.querySelector('.modal');
-    getModal.classList.toggle('hide');
-}
+
 
 
 function stopClock(){
@@ -206,5 +203,18 @@ function checkScore(){
     listOpenCards.push(currentCard);
     console.log(listOpenCards);
 }
-    
+// Modal Functions
+
+function dataForModal(){
+
+    const modalTime = document.querySelector('.player_time');
+    const modalMoves = document.querySelector('.player_moves');
+    modalTime.innerHTML = time;
+    modalMoves.innerHTML = moves;
+}
+function toggleModal(){
+    const getModal = document.querySelector('.modal');
+    getModal.classList.toggle('hide');
+    dataForModal();
+}
 init();
