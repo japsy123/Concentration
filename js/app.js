@@ -135,8 +135,11 @@ function lockCards(fCard,sCard){
     listOpenCards = [];
     score ++;
     if(score === 1){
-        stopClock();
+        clearInterval(clockId);
+        isClockOff = true;
         toggleModal();
+        resetCards();
+
 
     }
 
@@ -247,8 +250,15 @@ function resetGame(){
     document.querySelector('.modal').classList.add('hide');
     stopClock();
     resetStats();
+    resetCards();
     shuffleTheDeck();
 
+}
+function resetCards(){
+    const deckOfCards = Array.from(document.querySelectorAll('.card'));
+    for(let card of deckOfCards){
+        card.className ='card';
+    }
 }
 
 
