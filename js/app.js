@@ -209,12 +209,15 @@ function dataForModal(){
 
     const modalTime = document.querySelector('.player_time');
     const modalMoves = document.querySelector('.player_moves');
-    modalTime.innerHTML = time;
-    modalMoves.innerHTML = moves;
+    const modalStars = document.querySelector('.player_stars');
+    modalTime.innerHTML = `Time: ${time}`;
+    modalMoves.innerHTML = `Moves: ${moves}`;
+    modalStars.innerHTML = `Stars: 1`;
 }
 function toggleModal(){
     const getModal = document.querySelector('.modal');
     getModal.classList.toggle('hide');
     dataForModal();
 }
+toggleModal();
 init();
