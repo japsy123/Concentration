@@ -31,6 +31,7 @@ body {
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    margin-top:0;
 }
 
 /*
@@ -106,4 +107,64 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+/* Style for the modal */
+
+.modal{
+    top:0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.modal_content{
+    width: 500px;
+    position: relative;
+    left:38%;
+    top:17%;
+    background: #fff2df;
+    border-radius: 3px;
+}
+
+.modal_heading{
+    display: flex;
+    justify-content: space-between;
+     padding: 1rem;
+     border-bottom:2px solid blueviolet ;
+}
+.modal_shut{
+    font-weight: bold;
+}
+
+.player_stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid blueviolet;
+    padding: .6rem;
+}
+.player_options{
+    display: flex;
+    justify-content: center;
+    padding: .6rem;
+}
+.replay{
+    margin-right:4px;
+}
+
+.player_win_message{
+
+    color: green;
+    font-weight: bold;
+
+}
+.thumb{
+    margin-top:8px;
+    
+}
+.hide{
+    display: none;
 }
