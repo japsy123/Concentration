@@ -134,11 +134,18 @@ function lockCards(fCard,sCard){
     console.log("match")
     listOpenCards = [];
     score ++;
-    if(score === 1){
-        clearInterval(clockId);
+    if(score === 8){
+        
+
+        setTimeout(() => {
+            clearInterval(clockId);
         isClockOff = true;
         toggleModal();
+        
         resetCards();
+            
+
+        },1000)
 
 
     }
@@ -183,7 +190,7 @@ function incrementMove(){
 }
 
 function checkScore(){
-    if(moves ===2 || moves === 3){
+    if(moves ===12 || moves === 24){
         changeStars();
     }
 
