@@ -222,6 +222,9 @@ function toggleModal(){
     dataForModal();
 }
 toggleModal();
-
+function resetGame(){
+    
+}
 document.querySelector('.close').addEventListener('click',toggleModal);
+document.querySelector('.replay').addEventListener('click',resetGame)
 init();
