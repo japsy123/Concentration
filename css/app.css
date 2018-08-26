@@ -120,7 +120,7 @@ h1 {
 }
 
 .modal_content{
-    width: 500px;
+    width: 390px;
     position: relative;
     left:38%;
     top:17%;
@@ -168,3 +168,5 @@ h1 {
 .hide{
     display: none;
 }
+
+/* Adding Media Queries */

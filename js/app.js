@@ -228,7 +228,7 @@ function dataForModal(){
     const modalTime = document.querySelector('.player_time');
     const modalMoves = document.querySelector('.player_moves');
     const modalStars = document.querySelector('.player_stars');
-    modalTime.innerHTML = `Time: ${time}`;
+    modalTime.innerHTML = `Time: ${time} seconds` ;
     modalMoves.innerHTML = `Moves: ${moves}`;
     modalStars.innerHTML = `Stars: ${starRating}`;
 }
