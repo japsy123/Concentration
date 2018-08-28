@@ -184,7 +184,7 @@ function changeStars(){
 function incrementMove(){
     moves++;
     const moveUpdate = document.querySelector('.moves');
-    moveUpdate.innerHTML = moves;
+    moveUpdate.innerHTML =  `Moves ${moves}`;
 
     
 }
@@ -241,7 +241,7 @@ function toggleModal(){
 function resetStats(){
     moves = 0;
     score=0;
-    document.querySelector('.moves').innerHTML = moves;
+    document.querySelector('.moves').innerHTML = `Moves ${moves}`;
     starRating = 3;
     const listOfStars = Array.from(document.querySelectorAll('.stars li'));
 
